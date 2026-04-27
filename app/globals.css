@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-purple: #6c63ff;
+  --color-purple-light: #a89cff;
+  --color-purple-bg: #f0eeff;
+  --color-purple-dark: #1a1a3e;
+  --color-red: #e53935;
+  --color-whatsapp: #25d366;
+  --color-off-white: #f7f7ff;
+  --color-text-body: #555555;
+  --color-text-muted: #999999;
+  --color-border: #eeeeee;
+  --color-topbar: #111111;
+  --font-sans: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --shadow-card: 0 8px 32px rgba(108, 99, 255, 0.15);
+  --shadow-modal: 0 20px 80px rgba(0, 0, 0, 0.25);
+  --shadow-nav: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  @apply text-[#222] bg-white antialiased;
+}
+
+*,
+*::before,
+*::after,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-sans) !important;
+}
+
+::selection {
+  background: #1239d633;
+  color: #0b133f;
+}
