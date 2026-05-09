@@ -1,5 +1,6 @@
 import { JobPortalClient } from "@/components/job-portal/JobPortalClient";
 import type { Metadata } from "next";
+import { getJobs } from "@/lib/data/jobs";
 
 export const metadata: Metadata = {
   title: "Job Portal | Find Your Dream Job In UAE & Beyond",
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function JobPortalPage() {
-  return <JobPortalClient />;
+export default async function JobPortalPage() {
+  const jobs = await getJobs();
+  return <JobPortalClient jobs={jobs} />;
 }

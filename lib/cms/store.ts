@@ -8,6 +8,7 @@ export type CmsContent = {
   countries?: unknown;
   blogs?: unknown;
   home?: unknown;
+  jobs?: unknown;
 };
 
 const CONTENT_DIR = path.join(process.cwd(), "content");

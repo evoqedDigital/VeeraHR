@@ -366,3 +366,10 @@ export const JOBS: Job[] = [
     ],
   },
 ];
+
+export async function getJobs(): Promise<Job[]> {
+  const { readCmsContent } = await import("@/lib/cms/store");
+  const cms = await readCmsContent();
+  if (!Array.isArray(cms.jobs)) return JOBS;
+  return cms.jobs as Job[];
+}

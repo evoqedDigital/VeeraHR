@@ -3,12 +3,11 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CtaBand } from "@/components/CtaBand";
-import { JOBS, type Job } from "@/lib/data/jobs";
+import type { Job } from "@/lib/data/jobs";
 
-const LOCATIONS = Array.from(new Set(JOBS.map((j) => j.location))).sort();
-const CATEGORIES = Array.from(new Set(JOBS.map((j) => j.category))).sort();
-
-export function JobPortalClient() {
+export function JobPortalClient({ jobs }: { jobs: Job[] }) {
+  const LOCATIONS = useMemo(() => Array.from(new Set(jobs.map((j) => j.location))).sort(), [jobs]);
+  const CATEGORIES = useMemo(() => Array.from(new Set(jobs.map((j) => j.category))).sort(), [jobs]);
   const [q, setQ] = useState("");
   const [cat, setCat] = useState("");
   const [loc, setLoc] = useState("");
@@ -25,7 +24,7 @@ export function JobPortalClient() {
   const cvInputRef = useRef<HTMLInputElement>(null);
 
   const filtered = useMemo(() => {
-    let list = JOBS.filter((j) => {
+    let list = jobs.filter((j) => {
       const s = q.trim().toLowerCase();
       if (s && !j.title.toLowerCase().includes(s) && !j.category.toLowerCase().includes(s)) {
         return false;
@@ -37,7 +36,7 @@ export function JobPortalClient() {
     if (sort === "salary-high") list = [...list].sort((a, b) => b.salary - a.salary);
     if (sort === "salary-low") list = [...list].sort((a, b) => a.salary - b.salary);
     return list;
-  }, [q, cat, loc, sort]);
+  }, [jobs, q, cat, loc, sort]);
 
   const openJob = (j: Job) => {
     setJob(j);

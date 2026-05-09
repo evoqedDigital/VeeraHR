@@ -8,6 +8,7 @@ import { SERVICE_CATEGORIES } from "@/lib/data/service-categories";
 import { COUNTRIES } from "@/lib/data/countries";
 import { BLOG_POSTS } from "@/lib/data/blog-posts";
 import { getHomeContent } from "@/lib/data/home";
+import { JOBS } from "@/lib/data/jobs";
 
 function parseJsonField<T>(formData: FormData, key: string): T {
   const raw = String(formData.get(key) ?? "");
@@ -15,7 +16,10 @@ function parseJsonField<T>(formData: FormData, key: string): T {
 }
 
 export async function loginAction(formData: FormData) {
-  const ok = await loginAdmin(String(formData.get("password") ?? ""));
+  const ok = await loginAdmin(
+    String(formData.get("username") ?? ""),
+    String(formData.get("password") ?? ""),
+  );
   if (!ok) redirect("/admin/login?error=invalid");
   redirect("/admin");
 }
@@ -108,4 +112,20 @@ export async function resetHomeAction() {
   });
   revalidatePath("/");
   redirect("/admin/home?saved=1");
+}
+
+export async function saveJobsAction(formData: FormData) {
+  await requireAdminAuth();
+  const data = parseJsonField(formData, "json");
+  await updateCmsContent({ jobs: data });
+  revalidatePath("/job-portal");
+  redirect("/admin/jobs?saved=1");
+}
+
+export async function resetJobsAction() {
+  await requireAdminAuth();
+  const current = await readCmsContent();
+  await updateCmsContent({ ...current, jobs: JOBS });
+  revalidatePath("/job-portal");
+  redirect("/admin/jobs?saved=1");
 }

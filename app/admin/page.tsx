@@ -17,6 +17,7 @@ export default async function AdminPage() {
           ["/admin/services", "Services page", "Edit exact service titles, descriptions, and image paths."],
           ["/admin/countries", "Countries page", "Manage country list, descriptions, positions, and images."],
           ["/admin/blogs", "Blog articles", "Create/update blog cards and full detail content."],
+          ["/admin/jobs", "Job openings", "Create/update the Job Portal openings (title, salary, location, requirements, benefits)."],
         ].map(([href, label, desc]) => (
           <Link key={href} href={href} className="rounded-xl border border-[#e8ebf8] bg-white p-5 no-underline">
             <h2 className="text-lg font-bold text-[#1a1a3e]">{label}</h2>

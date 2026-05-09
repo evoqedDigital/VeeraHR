@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
+    "bcryptjs": "^3.0.3",
     "framer-motion": "^12.38.0",
+    "jose": "^6.2.3",
     "next": "15.2.9",
     "nodemailer": "^8.0.7",
     "react": "^19.0.0",

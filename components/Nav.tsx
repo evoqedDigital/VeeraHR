@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { brand } from "@/lib/site";
 
+const brochureHref = "/Veera-HR-Brochure.pdf";
+
 const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
@@ -14,7 +16,7 @@ const links = [
   { href: "/countries", label: "Countries" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
-  { href: "/Veera-HR-Brochure.pdf", label: "Profile" },
+  { href: brochureHref, label: "Profile" },
 ] as const;
 
 function isActive(pathname: string, href: string) {

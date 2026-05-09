@@ -26,6 +26,7 @@ export function AdminShell({
           ["/admin/services", "Services"],
           ["/admin/countries", "Countries"],
           ["/admin/blogs", "Blogs"],
+          ["/admin/jobs", "Jobs"],
         ].map(([href, label]) => (
           <Link
             key={href}

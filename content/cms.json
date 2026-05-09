@@ -1,1 +1,351 @@
-{}
+{
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Security Supervisor",
+      "category": "Security",
+      "type": "Full Time",
+      "location": "Masafi",
+      "salary": 4000,
+      "currency": "AED",
+      "experience": "3-5",
+      "featured": true,
+      "isNew": false,
+      "posted": "2 days ago",
+      "logo": "SS",
+      "desc": "We are looking for an experienced Security Supervisor to oversee our security operations at a leading facility in Masafi. You will manage a team of guards, ensure safety protocols are followed, and liaise with management.",
+      "reqs": [
+        "Minimum 3 years security experience",
+        "Valid SIRA certificate preferred",
+        "Strong leadership and communication skills",
+        "Ability to work rotating shifts",
+        "Clean background check required"
+      ],
+      "benefits": [
+        "Competitive salary AED 4,000",
+        "Accommodation provided",
+        "Medical insurance",
+        "30 days annual leave",
+        "Air ticket allowance"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "SIRA Security Guard",
+      "category": "Security",
+      "type": "Full Time",
+      "location": "Dubai",
+      "salary": 2200,
+      "currency": "AED",
+      "experience": "1-3",
+      "featured": true,
+      "isNew": true,
+      "posted": "Today",
+      "logo": "SG",
+      "desc": "We require SIRA-licensed security guards for deployment at premium commercial and residential properties across Dubai. Candidates must hold a valid SIRA card.",
+      "reqs": [
+        "Valid SIRA license mandatory",
+        "1+ years security experience",
+        "Good physical fitness",
+        "Ability to work all shifts",
+        "Arabic speaking preferred"
+      ],
+      "benefits": [
+        "Salary AED 2,200",
+        "Uniform provided",
+        "Medical insurance",
+        "Transportation allowance",
+        "Overtime pay"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "PSBD Security Guard",
+      "category": "Security",
+      "type": "Full Time",
+      "location": "Dubai",
+      "salary": 2000,
+      "currency": "USD",
+      "experience": "1-3",
+      "featured": false,
+      "isNew": false,
+      "posted": "3 days ago",
+      "logo": "PG",
+      "desc": "Urgent requirement for PSBD licensed security guards to be deployed at various locations in Dubai. The role involves access control, patrol duties and emergency response.",
+      "reqs": [
+        "Valid PSBD license required",
+        "Clean criminal record",
+        "Minimum 1 year experience",
+        "Good communication skills",
+        "Physically fit"
+      ],
+      "benefits": [
+        "USD 2,000 per month",
+        "Free accommodation",
+        "Medical coverage",
+        "Annual leave"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Light Vehicle Driver (UAE License)",
+      "category": "Driving",
+      "type": "Full Time",
+      "location": "Abu Dhabi",
+      "salary": 3000,
+      "currency": "AED",
+      "experience": "1-3",
+      "featured": false,
+      "isNew": true,
+      "posted": "Today",
+      "logo": "DV",
+      "desc": "We are hiring experienced light vehicle drivers for a reputable logistics company in Abu Dhabi. The role involves transporting goods and personnel safely and on schedule.",
+      "reqs": [
+        "Valid UAE driving license (Light Vehicle)",
+        "2+ years UAE driving experience",
+        "Knowledge of UAE roads",
+        "Clean driving record",
+        "Good time management"
+      ],
+      "benefits": [
+        "AED 3,000 salary",
+        "Company vehicle provided",
+        "Fuel allowance",
+        "Medical insurance",
+        "Annual air ticket"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Hotel Housekeeping Staff",
+      "category": "Housekeeping",
+      "type": "Full Time",
+      "location": "Dubai",
+      "salary": 2000,
+      "currency": "AED",
+      "experience": "fresher",
+      "featured": false,
+      "isNew": false,
+      "posted": "5 days ago",
+      "logo": "HK",
+      "desc": "We are seeking dedicated housekeeping staff for a 4-star hotel in Dubai. You will be responsible for maintaining rooms and public areas to the highest cleanliness standards.",
+      "reqs": [
+        "Prior hotel housekeeping experience preferred",
+        "Attention to detail",
+        "Good physical stamina",
+        "Basic English communication",
+        "Team player"
+      ],
+      "benefits": [
+        "AED 2,000 + tips",
+        "Free accommodation",
+        "Meals provided",
+        "Medical insurance",
+        "Training provided"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Cleaners (Male & Female)",
+      "category": "Housekeeping",
+      "type": "Full Time",
+      "location": "Sharjah",
+      "salary": 1750,
+      "currency": "AED",
+      "experience": "fresher",
+      "featured": false,
+      "isNew": false,
+      "posted": "1 week ago",
+      "logo": "CL",
+      "desc": "Urgently required male and female cleaners for commercial and residential facilities in Sharjah. Immediate joining available with accommodation included.",
+      "reqs": [
+        "No experience required – training provided",
+        "Physical fitness and stamina",
+        "Willingness to work flexible hours",
+        "Good attitude and reliability",
+        "Team spirit"
+      ],
+      "benefits": [
+        "AED 1,500–2,000 salary",
+        "Free accommodation & meals",
+        "Medical insurance",
+        "Annual leave",
+        "Visa provided"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Construction Helper",
+      "category": "Construction",
+      "type": "Full Time",
+      "location": "Dubai",
+      "salary": 1600,
+      "currency": "AED",
+      "experience": "fresher",
+      "featured": false,
+      "isNew": false,
+      "posted": "4 days ago",
+      "logo": "CH",
+      "desc": "Multiple openings for construction helpers to support ongoing infrastructure projects in Dubai. This is an excellent opportunity for candidates seeking to enter the construction industry.",
+      "reqs": [
+        "No formal experience required",
+        "Good physical health",
+        "Willingness to work outdoors",
+        "Follow safety instructions",
+        "Punctuality and reliability"
+      ],
+      "benefits": [
+        "AED 1,600 per month",
+        "Free accommodation",
+        "Site transport",
+        "Medical insurance",
+        "End of service gratuity"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Construction Mason",
+      "category": "Construction",
+      "type": "Full Time",
+      "location": "Dubai",
+      "salary": 2500,
+      "currency": "AED",
+      "experience": "3-5",
+      "featured": false,
+      "isNew": false,
+      "posted": "6 days ago",
+      "logo": "CM",
+      "desc": "Experienced masons required for high-rise residential construction projects in Dubai. Work involves brickwork, blockwork, plastering and general masonry.",
+      "reqs": [
+        "3+ years masonry experience",
+        "Knowledge of finishing techniques",
+        "Ability to read technical drawings",
+        "Valid UAE residence visa preferred",
+        "Good safety awareness"
+      ],
+      "benefits": [
+        "AED 2,500",
+        "Free accommodation",
+        "Medical insurance",
+        "Annual air ticket",
+        "Overtime paid"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "IT Support Engineer",
+      "category": "IT",
+      "type": "Full Time",
+      "location": "Dubai",
+      "salary": 7000,
+      "currency": "AED",
+      "experience": "3-5",
+      "featured": true,
+      "isNew": true,
+      "posted": "Today",
+      "logo": "IT",
+      "desc": "A leading technology firm in Dubai is seeking a skilled IT Support Engineer to manage internal infrastructure, provide end-user support and maintain network operations.",
+      "reqs": [
+        "Bachelor's in IT or Computer Science",
+        "3+ years IT support experience",
+        "Proficiency in Windows Server & networking",
+        "CompTIA or Microsoft certifications preferred",
+        "Excellent troubleshooting skills"
+      ],
+      "benefits": [
+        "AED 7,000 salary",
+        "Health insurance for family",
+        "30 days paid leave",
+        "Annual bonus",
+        "Professional development budget"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Staff Nurse (Female)",
+      "category": "Healthcare",
+      "type": "Full Time",
+      "location": "Abu Dhabi",
+      "salary": 6000,
+      "currency": "AED",
+      "experience": "3-5",
+      "featured": false,
+      "isNew": true,
+      "posted": "Today",
+      "logo": "SN",
+      "desc": "A leading medical facility in Abu Dhabi is hiring qualified female nurses to join their growing team. The role involves patient care, medication administration, and coordinating with doctors.",
+      "reqs": [
+        "DHA/HAAD nursing license required",
+        "3+ years clinical experience",
+        "BLS/ACLS certification",
+        "Good English communication",
+        "Patient-focused attitude"
+      ],
+      "benefits": [
+        "AED 6,000 + allowances",
+        "Free accommodation",
+        "Medical insurance",
+        "Annual flight ticket",
+        "Career growth opportunities"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Hotel Receptionist",
+      "category": "Hospitality",
+      "type": "Full Time",
+      "location": "Dubai",
+      "salary": 3500,
+      "currency": "AED",
+      "experience": "1-3",
+      "featured": false,
+      "isNew": false,
+      "posted": "3 days ago",
+      "logo": "HR",
+      "desc": "A prestigious 5-star hotel in Dubai is seeking a polished and professional receptionist to be the first point of contact for guests, handling check-ins, queries and concierge services.",
+      "reqs": [
+        "1–2 years hotel front desk experience",
+        "Fluent in English; Arabic a plus",
+        "Opera PMS knowledge preferred",
+        "Excellent interpersonal skills",
+        "Professional appearance"
+      ],
+      "benefits": [
+        "AED 3,500",
+        "Service charge",
+        "Meals on duty",
+        "Medical insurance",
+        "Annual leave + ticket"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "HR & Admin Coordinator",
+      "category": "Admin",
+      "type": "Full Time",
+      "location": "Dubai",
+      "salary": 5000,
+      "currency": "AED",
+      "experience": "3-5",
+      "featured": false,
+      "isNew": false,
+      "posted": "2 days ago",
+      "logo": "HA",
+      "desc": "We are looking for a capable HR & Admin Coordinator to support our HR team with recruitment coordination, document management, visa processing and general office administration.",
+      "reqs": [
+        "3+ years HR/Admin experience",
+        "Knowledge of UAE Labour Law",
+        "Proficiency in MS Office",
+        "Strong organizational skills",
+        "Bachelor's degree preferred"
+      ],
+      "benefits": [
+        "AED 5,000",
+        "Health insurance",
+        "Annual leave",
+        "Career development",
+        "Professional team"
+      ]
+    }
+  ]
+}
