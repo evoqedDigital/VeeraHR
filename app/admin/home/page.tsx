@@ -1,39 +1,20 @@
-import { AdminShell, JsonEditorCard } from "@/app/admin/_components";
-import { saveHomeAction, resetHomeAction } from "@/app/admin/actions";
+import { AdminShell } from "@/app/admin/_components";
 import { requireAdminAuth } from "@/lib/cms/admin-auth";
 import { getHomeContent } from "@/lib/data/home";
+import { HomeManager } from "@/app/admin/home/HomeManager";
 
 export default async function AdminHomePage({
-  searchParams,
 }: {
-  searchParams: Promise<{ saved?: string }>;
 }) {
-  await requireAdminAuth();
-  const params = await searchParams;
+  await requireAdminAuth({ roles: ["admin"] });
   const home = await getHomeContent();
-
-  const editable = {
-    heroVideoSources: home.heroVideoSources,
-    heroPoster: home.heroPoster,
-    aboutImage: home.aboutImage,
-    whyImage: home.whyImage,
-    industries: home.industries,
-    homeServices: home.homeServices,
-    outsourceCountryFlags: home.outsourceCountryFlags,
-    hrProcessSteps: home.hrProcessSteps,
-    whyFeatures: home.whyFeatures,
-    testimonials: home.testimonials,
-  };
 
   return (
     <AdminShell title="Manage Home Content">
-      <JsonEditorCard
-        title="Home JSON"
-        jsonValue={JSON.stringify(editable, null, 2)}
-        action={saveHomeAction}
-        resetAction={resetHomeAction}
-        saved={params.saved === "1"}
-      />
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <p className="text-sm text-[#666]">Edit homepage content.</p>
+      </div>
+      <HomeManager initialHome={home} />
     </AdminShell>
   );
 }

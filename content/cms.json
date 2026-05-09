@@ -65,7 +65,7 @@
       "type": "Full Time",
       "location": "Dubai",
       "salary": 2000,
-      "currency": "USD",
+      "currency": "AED",
       "experience": "1-3",
       "featured": false,
       "isNew": false,
@@ -83,7 +83,8 @@
         "USD 2,000 per month",
         "Free accommodation",
         "Medical coverage",
-        "Annual leave"
+        "Annual leave",
+        "End of service benefits"
       ]
     },
     {
@@ -346,6 +347,14 @@
         "Career development",
         "Professional team"
       ]
+    }
+  ],
+  "users": [
+    {
+      "email": "manishbhattarai34@gmail.com",
+      "role": "jobs",
+      "active": true,
+      "createdAt": "2026-05-09T10:27:29.482Z"
     }
   ]
 }

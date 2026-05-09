@@ -1,18 +1,43 @@
 import Link from "next/link";
 import { logoutAction } from "@/app/admin/actions";
 import type { ReactNode } from "react";
+import { getAdminSession } from "@/lib/cms/admin-auth";
 
-export function AdminShell({
+export async function AdminShell({
   title,
   children,
 }: {
   title: string;
   children: ReactNode;
 }) {
+  const session = await getAdminSession();
+  const role = session?.role ?? "admin";
+  const email = session?.email;
+  const links =
+    role === "jobs"
+      ? ([["/admin/jobs", "Jobs"]] as const)
+      : ([
+          ["/admin", "Dashboard"],
+          ["/admin/home", "Home"],
+          ["/admin/services", "Services"],
+          ["/admin/countries", "Countries"],
+          ["/admin/blogs", "Blogs"],
+          ["/admin/jobs", "Jobs"],
+          ["/admin/users", "Users"],
+        ] as const);
+
   return (
     <section className="mx-auto max-w-6xl px-4 py-8 sm:px-8">
       <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-        <h1 className="text-2xl font-extrabold text-[#1a1a3e]">{title}</h1>
+        <div>
+          <h1 className="text-2xl font-extrabold text-[#1a1a3e]">{title}</h1>
+          {email && (
+            <p className="mt-1 text-xs font-semibold text-[#667]">
+              Logged in as <span className="text-[#111]">{email}</span> ·{" "}
+              <span className="text-[#1239D6]">{role === "admin" ? "Admin" : "Jobs only"}</span>
+            </p>
+          )}
+        </div>
         <form action={logoutAction}>
           <button className="rounded-lg border border-[#ddd] px-3 py-2 text-sm font-semibold text-[#444]" type="submit">
             Logout
@@ -20,14 +45,7 @@ export function AdminShell({
         </form>
       </div>
       <nav className="mb-6 flex flex-wrap gap-2">
-        {[
-          ["/admin", "Dashboard"],
-          ["/admin/home", "Home"],
-          ["/admin/services", "Services"],
-          ["/admin/countries", "Countries"],
-          ["/admin/blogs", "Blogs"],
-          ["/admin/jobs", "Jobs"],
-        ].map(([href, label]) => (
+        {links.map(([href, label]) => (
           <Link
             key={href}
             href={href}

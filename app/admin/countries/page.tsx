@@ -1,26 +1,20 @@
-import { AdminShell, JsonEditorCard } from "@/app/admin/_components";
-import { saveCountriesAction, resetCountriesAction } from "@/app/admin/actions";
+import { AdminShell } from "@/app/admin/_components";
 import { requireAdminAuth } from "@/lib/cms/admin-auth";
 import { getCountries } from "@/lib/data/countries";
+import { CountriesManager } from "@/app/admin/countries/CountriesManager";
 
 export default async function AdminCountriesPage({
-  searchParams,
 }: {
-  searchParams: Promise<{ saved?: string }>;
 }) {
-  await requireAdminAuth();
-  const params = await searchParams;
+  await requireAdminAuth({ roles: ["admin"] });
   const countries = await getCountries();
 
   return (
     <AdminShell title="Manage Countries">
-      <JsonEditorCard
-        title="Countries JSON"
-        jsonValue={JSON.stringify(countries, null, 2)}
-        action={saveCountriesAction}
-        resetAction={resetCountriesAction}
-        saved={params.saved === "1"}
-      />
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <p className="text-sm text-[#666]">Add, edit, and delete the countries shown on the Countries page.</p>
+      </div>
+      <CountriesManager initialCountries={countries} />
     </AdminShell>
   );
 }

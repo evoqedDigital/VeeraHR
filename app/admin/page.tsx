@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 export default async function AdminPage() {
-  await requireAdminAuth();
+  await requireAdminAuth({ roles: ["admin"] });
 
   return (
     <AdminShell title="Content Admin">
@@ -18,6 +18,7 @@ export default async function AdminPage() {
           ["/admin/countries", "Countries page", "Manage country list, descriptions, positions, and images."],
           ["/admin/blogs", "Blog articles", "Create/update blog cards and full detail content."],
           ["/admin/jobs", "Job openings", "Create/update the Job Portal openings (title, salary, location, requirements, benefits)."],
+          ["/admin/users", "User management", "Control access: admins (all) vs jobs-only team members."],
         ].map(([href, label, desc]) => (
           <Link key={href} href={href} className="rounded-xl border border-[#e8ebf8] bg-white p-5 no-underline">
             <h2 className="text-lg font-bold text-[#1a1a3e]">{label}</h2>

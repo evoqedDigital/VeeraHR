@@ -1,26 +1,20 @@
-import { AdminShell, JsonEditorCard } from "@/app/admin/_components";
-import { saveServicesAction, resetServicesAction } from "@/app/admin/actions";
+import { AdminShell } from "@/app/admin/_components";
 import { requireAdminAuth } from "@/lib/cms/admin-auth";
 import { getServiceCategories } from "@/lib/data/service-categories";
+import { ServicesManager } from "@/app/admin/services/ServicesManager";
 
 export default async function AdminServicesPage({
-  searchParams,
 }: {
-  searchParams: Promise<{ saved?: string }>;
 }) {
-  await requireAdminAuth();
-  const params = await searchParams;
+  await requireAdminAuth({ roles: ["admin"] });
   const services = await getServiceCategories();
 
   return (
     <AdminShell title="Manage Services">
-      <JsonEditorCard
-        title="Services JSON"
-        jsonValue={JSON.stringify(services, null, 2)}
-        action={saveServicesAction}
-        resetAction={resetServicesAction}
-        saved={params.saved === "1"}
-      />
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <p className="text-sm text-[#666]">Add, edit, and delete service cards shown on the Services page.</p>
+      </div>
+      <ServicesManager initialServices={services} />
     </AdminShell>
   );
 }

@@ -37,7 +37,7 @@ async function getCurrentJobs(): Promise<Job[]> {
 }
 
 export async function upsertJobAction(formData: FormData): Promise<{ ok: true } | { ok: false; error: string }> {
-  await requireAdminAuth();
+  await requireAdminAuth({ roles: ["admin", "jobs"] });
 
   const parsed = JobSchema.safeParse({
     id: formData.get("id") || undefined,
@@ -83,7 +83,7 @@ export async function upsertJobAction(formData: FormData): Promise<{ ok: true } 
 }
 
 export async function deleteJobAction(formData: FormData): Promise<{ ok: true } | { ok: false; error: string }> {
-  await requireAdminAuth();
+  await requireAdminAuth({ roles: ["admin", "jobs"] });
   const id = Number(formData.get("id"));
   if (!Number.isFinite(id) || id <= 0) return { ok: false, error: "Invalid id." };
 

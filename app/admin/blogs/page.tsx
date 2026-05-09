@@ -1,26 +1,20 @@
-import { AdminShell, JsonEditorCard } from "@/app/admin/_components";
-import { saveBlogsAction, resetBlogsAction } from "@/app/admin/actions";
+import { AdminShell } from "@/app/admin/_components";
 import { requireAdminAuth } from "@/lib/cms/admin-auth";
 import { getBlogPosts } from "@/lib/data/blog-posts";
+import { BlogsManager } from "@/app/admin/blogs/BlogsManager";
 
 export default async function AdminBlogsPage({
-  searchParams,
 }: {
-  searchParams: Promise<{ saved?: string }>;
 }) {
-  await requireAdminAuth();
-  const params = await searchParams;
+  await requireAdminAuth({ roles: ["admin"] });
   const blogs = await getBlogPosts();
 
   return (
     <AdminShell title="Manage Blog Content">
-      <JsonEditorCard
-        title="Blogs JSON"
-        jsonValue={JSON.stringify(blogs, null, 2)}
-        action={saveBlogsAction}
-        resetAction={resetBlogsAction}
-        saved={params.saved === "1"}
-      />
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <p className="text-sm text-[#666]">Add, edit, and delete blog posts shown on the Blog page.</p>
+      </div>
+      <BlogsManager initialBlogs={blogs} />
     </AdminShell>
   );
 }
